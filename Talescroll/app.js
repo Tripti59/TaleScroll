@@ -9,7 +9,7 @@ app.use(express.urlencoded({extended:true})); // urlencoded-like form body to ac
 app.get('/quotes', (req, res) => {
   request.get(
     {
-      url: 'https://api.api-ninjas.com/v1/quotes?category=' + category,
+      url: 'https://api.api-ninjas.com/v1/quotes?category=' + "",
       headers: {
         'X-Api-Key': process.env.API_KEY,
       },
