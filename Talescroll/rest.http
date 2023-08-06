@@ -1,0 +1,5 @@
+# Get quotes
+GET http://localhost:3000/quotes
+
+### Get quotes by category
+GET http://localhost:3000/quotes/happiness
