@@ -1,46 +1,106 @@
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Pacifico&display=swap');
 
-body {
+/* Reset some default styles */
+* {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    box-sizing: border-box;
 }
 
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-    text-align: center;
-    display: flex;
+/* Basic styling for the header */
+.header {
+    color: #3fa308;
+    padding: 10px 0;
+    border-bottom: 4px solid #69a6d14d;
+}
+
+.header-content {
+    display: flex; 
     flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-.login-button button {
-    background-color: #4CAF50;
-    color: #fff;
-    padding: 8px 15px;
-    margin-left: 8px;
-    margin-top: 8px;
-    flex: 1;
+/* Login button styling */
+.login-button {
+    color: #2f676fbd;
+    background-color: #fff;
     border: none;
-    border-radius: 4px;
+    border-radius: 26px;
+    padding: 8px 16px;
     cursor: pointer;
-}
-
-.language-selection {
-    margin-top: 10px;
-    flex: 1;
-}
-
-label {
+    font-weight: 800;
     font-size: 18px;
-    margin-right: 10px;
+    font-family: pacifico, cursive;
+}
+/* Language select styling */
+.language-select {
+    padding: 8px;
+    color: #2f676fbd;
+    border-radius: 26px;
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+    font-weight: 800;
+    font-size: 18px;
+    font-family: pacifico, cursive;
+}
+.login-button:hover{
+    border-bottom: 4px solid #69a6d14d;
+}
+.language-select:hover{
+    border-bottom: 4px solid #69a6d14d;
 }
 
-select {
-    font-size: 16px;
-    padding: 4px;
-    border-radius: 4px;
+/* Site title styling */
+.site-title {
+    font-size: 36px;
+    font-family: pacifico, cursive;
+    color: #2f676fbd;
+
+}
+
+.image-quote {
+    width: 100%;
+    height: 40vh; 
+    background-image: url('quotesBg.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    opacity: 0.8;
+}
+.quote {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #000000;;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    font-family: 'Allura', cursive;
+    max-width: 95%;
+    font-weight: 900;
+    background-color: #ffffff80;
+}
+.quote p {
+    font-size: 5vh;
+    line-height: 1.5;
+    margin: 0;
 }
 
 
+/* Responsive adjustments */
+/* @media screen and (max-width: 768px) {
+    .header-content {
+        /* flex-direction: column; */
+        /* text-align: center;
+    } */ 
+    
+    /* .left-section, .right-section {
+        margin-bottom: 10px;
+    }
+} */
