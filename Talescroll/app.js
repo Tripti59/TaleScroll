@@ -1,11 +1,16 @@
+require('dotenv').config();
 const express = require('express');
-require('dotenv').config()
 const app=express();
 const request = require('request');
 
 app.use(express.json());  // body parser middleware to parse json objects in body
 app.use(express.urlencoded({extended:true})); // urlencoded-like form body to act like JSON
 
+
+  
+
+
+// route for quotes
 app.get('/quotes', (req, res) => {
   request.get(
     {
@@ -24,7 +29,9 @@ app.get('/quotes', (req, res) => {
       }
     }
   )
-})
+});
+
+// route for quotes using custom categories
 app.get('/quotes/:category', (req, res) => {
 //   const id = req.params;
 //   console.log(id);
