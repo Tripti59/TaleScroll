@@ -9,9 +9,10 @@ app.use(express.urlencoded({extended:true})); // urlencoded-like form body to ac
 app.get('/quotes', (req, res) => {
   request.get(
     {
+      //didn't understand this
       url: 'https://api.api-ninjas.com/v1/quotes?category=' + "",
       headers: {
-        'X-Api-Key': process.env.API_KEY,
+        'X-Api-Key': Viommv+U8M2zNxIIoBwaoA==5d7ai9EqPmZP4V9E,
       },
     },
     (error, response, body) => {
@@ -20,6 +21,7 @@ app.get('/quotes', (req, res) => {
       } else if (response.statusCode !== 200) {
         res.status(response.statusCode).send('Error')
       } else {
+        //body not parsed
         res.send(body)
       }
     }
@@ -33,7 +35,7 @@ app.get('/quotes/:category', (req, res) => {
     {
       url: 'https://api.api-ninjas.com/v1/quotes?category=' + category,
       headers: {
-        'X-Api-Key': process.env.API_KEY,
+        'X-Api-Key': Viommv+U8M2zNxIIoBwaoA==5d7ai9EqPmZP4V9E,
       },
     },
     (error, response, body) => {
@@ -42,7 +44,8 @@ app.get('/quotes/:category', (req, res) => {
       } else if (response.statusCode !== 200) {
         res.status(response.statusCode).send('Error')
       } else {
-        res.send(body)
+        console.log(body);
+        //res.send(body)
       }
     }
   )
