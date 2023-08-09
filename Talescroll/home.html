@@ -5,23 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>TaleScroll</title>
-    <script>
-        fetch('https://api.api-ninjas.com/v1/quotes?category=', {
-  method: 'GET',
-  headers: {
-    'Content-type': 'application/json; charset=UTF-8',
-    'X-Api-Key': 'Viommv+U8M2zNxIIoBwaoA==5d7ai9EqPmZP4V9E',
-  },
-})
-  .then((response) => response.json())
-  .then((json) => {
-    // console.log(json);
-    const markup = json[0].quote;
-    // console.log(markup);
-        document.getElementsByClassName('quote')[0].innerHTML=markup;
-
-  })
-</script>
+    
 </head>
 <body>
     <header class="header">
@@ -43,10 +27,28 @@
     </header>
     <div class="image-quote">
         <div class="quote">
-            <p>"The best way to predict the future is to create it."</p>
+            <p id="quote-main">"The best way to predict the future is to create it."</p>
+            <p id="quote-author">- Abraham Lincoln</p>
         </div>
     </div>
-
+    <script>
+        fetch('https://api.api-ninjas.com/v1/quotes?category=', {
+  method: 'GET',
+  headers: {
+    'Content-type': 'application/json; charset=UTF-8',
+    'X-Api-Key': 'Viommv+U8M2zNxIIoBwaoA==5d7ai9EqPmZP4V9E',
+  },
+})
+  .then((response) => response.json())
+  .then((json) => {
+    // console.log(json);
+    const markup = json[0].quote;
+    const author = json[0].author;
+    // console.log(author);
+        document.getElementById('quote-main').innerHTML=markup;
+        document.getElementById('quote-author').innerHTML=`- ` + author;
+  })
+</script>
 </body>
 </html>
 
