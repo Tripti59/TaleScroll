@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>TaleScroll</title>
+    
 </head>
 <body>
     <header class="header">
@@ -26,7 +27,8 @@
     </header>
     <div class="image-quote">
         <div class="quote">
-            <!-- <p>"The best way to predict the future is to create it."</p> -->
+            <p id="quote-main">"The best way to predict the future is to create it."</p>
+            <p id="quote-author">- Abraham Lincoln</p>
         </div>
     </div>
     <script>
@@ -41,8 +43,10 @@
   .then((json) => {
     // console.log(json);
     const markup = json[0].quote;
-    // console.log(markup);
-    document.getElementsByClassName('quote').innerHTML= '<p>markup</p>';
+    const author = json[0].author;
+    // console.log(author);
+        document.getElementById('quote-main').innerHTML=markup;
+        document.getElementById('quote-author').innerHTML=`- ` + author;
   })
 </script>
 </body>
